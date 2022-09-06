@@ -20,7 +20,6 @@ export default function AppDragDropDemo() {
 
 
   const onDragStart = (ev:any, id:number) => {
-    console.log("dragstart:", id);
     ev.dataTransfer.setData("id", id);
   };
 
@@ -40,8 +39,7 @@ export default function AppDragDropDemo() {
       }
       return task;
     });
-
-    setTasks(completedTasks);
+    setPieces(completedTasks);
   };
 
   const nextPart = () => {
@@ -77,7 +75,7 @@ export default function AppDragDropDemo() {
 
   useEffect(() => {
     getDraggableItems();
-  }, [part]);
+  }, [part, pieces]);
 
   return (
     <>
