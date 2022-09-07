@@ -4,20 +4,40 @@ import "./App.css";
 export default function AppDragDropDemo() {
   const [pieces, setPieces] = useState<any>(
     [
-      { name: "imagine 1", id: 1, category: "wip", part: 1, img: "" },
-      { name: "imagine 2", id: 2, category: "wip", part: 1, img: "" },
-      { name: "imagine 3", id: 3, category: "wip", part: 1, img: "" },
-      { name: "imagine 4", id: 4, category: "wip", part: 2, img: "" },
-      { name: "imagine 5", id: 5, category: "wip", part: 2, img: "" },
-      { name: "imagine 6", id: 6, category: "wip", part: 2, img: "" },
+      { name: "imagine 1", id: 1, category: "wip", part: 1, img: "", crafted: 0 },
+      { name: "imagine 2", id: 2, category: "wip", part: 1, img: "", crafted: 0 },
+      { name: "imagine 3", id: 3, category: "wip", part: 1, img: "", crafted: 0 },
+      { name: "imagine 4", id: 4, category: "wip", part: 2, img: "", crafted: 0 },
+      { name: "imagine 5", id: 5, category: "wip", part: 2, img: "", crafted: 0 },
+      { name: "imagine 6", id: 6, category: "wip", part: 2, img: "", crafted: 0 },
     ]
   );
-  const [part, setPart] = useState<number>(1);
+  const [currentPart, setCurrentPart] = useState<number>(0);
+  const [completedParts, setCompletedParts] = useState<any>([]);
   const [tasks, setTasks] = useState<any>({
     wip: [],
     complete: []
   });
 
+  const getImageObjectById = (id:number) => {
+    return pieces.filter((obj:any) => {
+      return obj.id === id
+    })
+  };
+
+  const getImageObjectByPart = (part: number, cat:string="") => {
+    return pieces.filter((obj: any) => {
+      if (cat) { return obj.part === part && obj.category === cat}
+      return obj.part === part
+    })
+  };
+
+  const setCraftedPieces = (pieceID:number) => {
+    setPieces(pieces.map((piece:any) => {
+      if (piece.id === pieceID) piece.crafted = 1
+      return piece;
+    }));
+  }
 
   const onDragStart = (ev:any, id:number) => {
     ev.dataTransfer.setData("id", id);
@@ -28,23 +48,38 @@ export default function AppDragDropDemo() {
   };
   //idea: poate un buton de start si sa afisam un video al proiectului final
   const onDrop = (ev:any, cat:any) => {
-    //verifica daca mai sunt imagini de drop-uit
-    //marcheaza imaginile care au fost drop-uite
-    //verifica ca imaginea sa fie din partea de ansamblu care trebuie
+    //verifica daca mai sunt imagini de drop-uit din acea parte si din toate - ce se intampla daca mai sunt imagini sau daca nu mai sunt
     //afiseaza imaginea ansamblului in cazul in care au fost toate imaginile drop=uite
     let id = parseInt(ev.dataTransfer.getData("id"));
-    let completedTasks = pieces.filter((task:any) => {
+    const imageDropped = getImageObjectById(id);
+    const imagesFromSamePart = getImageObjectByPart(imageDropped[0].part);
+    const leftImagesFromSamePart = getImageObjectByPart(imageDropped[0].part, "wip");
+    if (currentPart === 0) {
+      setCurrentPart(imageDropped[0].part);
+    } else if (currentPart !== imageDropped[0].part) {
+      alert("not from the same part");
+      return ;
+    }
+   
+    let completedTasks = pieces.map((task:any) => {
       if (task.id === id) {
         task.category = cat;
       }
       return task;
     });
     setPieces(completedTasks);
-  };
 
-  const nextPart = () => {
-    const noOfPart = part + 1;
-    setPart(noOfPart);
+    //s-au terminat imaginile din aceeasi parte?
+    if (leftImagesFromSamePart.length === 1) { // last image was dropped
+      let newCompletedParts = completedParts;
+      newCompletedParts.push(currentPart);
+      setCompletedParts(newCompletedParts);
+      setCurrentPart(0);
+      imagesFromSamePart.forEach((el:any) => {
+        setCraftedPieces(el.id);
+      });
+      //enable button to craft the part and block draggable
+    }
   };
 
   const getDraggableItems = () => {
@@ -54,7 +89,7 @@ export default function AppDragDropDemo() {
     };
 
     pieces.forEach((t:any) => {
-      if (part === t.part)
+      if (t.crafted === 0)
         allTasks[t.category].push(
           <div
             key={t.id}
@@ -75,7 +110,7 @@ export default function AppDragDropDemo() {
 
   useEffect(() => {
     getDraggableItems();
-  }, [part, pieces]);
+  }, [pieces]);
 
   return (
     <>
@@ -98,7 +133,7 @@ export default function AppDragDropDemo() {
           {tasks.complete}
         </div>
       </div>
-      <button className="next-part" onClick={() => nextPart()}>
+      <button className="next-part" onClick={() => {}}>
         Next part
       </button>
     </>
