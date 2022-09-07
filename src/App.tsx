@@ -1,15 +1,26 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./App.css";
+import Container from './components/Container';
 
 export default function AppDragDropDemo() {
   const [pieces, setPieces] = useState<any>(
     [
-      { name: "imagine 1", id: 1, category: "wip", part: 1, img: "", crafted: 0 },
-      { name: "imagine 2", id: 2, category: "wip", part: 1, img: "", crafted: 0 },
+      { name: "imagine 1", id: 1, category: "wip", part: 1, img: "../images/pexels-photo-13261419.jpeg", crafted: 0 },
+      { name: "imagine 2", id: 2, category: "wip", part: 1, img: "../images/pexels-photo-12309550.jpeg", crafted: 0 },
       { name: "imagine 3", id: 3, category: "wip", part: 1, img: "", crafted: 0 },
       { name: "imagine 4", id: 4, category: "wip", part: 2, img: "", crafted: 0 },
       { name: "imagine 5", id: 5, category: "wip", part: 2, img: "", crafted: 0 },
-      { name: "imagine 6", id: 6, category: "wip", part: 2, img: "", crafted: 0 },
+      { name: "imagine 6", id: 6, category: "wip", part: 3, img: "", crafted: 0 },
+      { name: "imagine 7", id: 7, category: "wip", part: 3, img: "", crafted: 0 },
+      { name: "imagine 8", id: 8, category: "wip", part: 3, img: "", crafted: 0 },
+      { name: "imagine 9", id: 9, category: "wip", part: 3, img: "", crafted: 0 },
+      { name: "imagine 10", id: 10, category: "wip", part: 3, img: "", crafted: 0 },
+      { name: "imagine 11", id: 1, category: "wip", part: 4, img: "", crafted: 0 },
+      { name: "imagine 12", id: 2, category: "wip", part: 4, img: "", crafted: 0 },
+      { name: "imagine 13", id: 3, category: "wip", part: 4, img: "", crafted: 0 },
+      { name: "imagine 14", id: 4, category: "wip", part: 5, img: "", crafted: 0 },
+      { name: "imagine 15", id: 5, category: "wip", part: 5, img: "", crafted: 0 },
+      { name: "imagine 16", id: 6, category: "wip", part: 5, img: "", crafted: 0 },
     ]
   );
   const [currentPart, setCurrentPart] = useState<number>(0);
@@ -60,7 +71,7 @@ export default function AppDragDropDemo() {
       alert("not from the same part");
       return ;
     }
-   
+
     let completedTasks = pieces.map((task:any) => {
       if (task.id === id) {
         task.category = cat;
@@ -115,6 +126,7 @@ export default function AppDragDropDemo() {
   return (
     <>
       <div className="container-drag">
+        <Container pieces={pieces}/>
         <h2 className="header">Globus Project</h2>
         <div
           className="wip"
