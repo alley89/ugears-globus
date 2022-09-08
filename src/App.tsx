@@ -111,13 +111,14 @@ export default function AppDragDropDemo() {
         );
     });
     console.log("partsToBeCrafted", partsToBeCrafted);
-    partsToBeCrafted.forEach((t: any) => {
-      if (t.crafted === 0)
-        allCraftedTasks[t.category].push(
+    partsToBeCrafted.forEach((t: any, index:any) => {
+      if (t[index].crafted === 0)
+        allCraftedTasks[t[index].category].push(
           t
         );
     });
     setTasks(allTasks);
+    console.log("allCraftedTasks", allCraftedTasks);
     setCraftedTasks(allCraftedTasks);
   };
 
@@ -126,6 +127,7 @@ export default function AppDragDropDemo() {
   }, []);
 
   useEffect(() => {
+    console.log("useeffect");
     getDraggableItems();
   }, [pieces, partsToBeCrafted]);
 
@@ -141,7 +143,7 @@ export default function AppDragDropDemo() {
           setCurrentPart={setCurrentPart}
           setPartsToBeCrafted={setPartsToBeCrafted}
           completedParts={completedParts}
-          pardsToBeCrafted={partsToBeCrafted}
+          partsToBeCrafted={partsToBeCrafted}
           setCompletedParts={setCompletedParts}
           craftedTasks={craftedTasks}
         />

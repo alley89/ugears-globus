@@ -15,6 +15,7 @@ function Container(props: any) {
   };
 
   const getPartsToBeCraftedById = (id: number) => {
+    console.log("getPartsToBeCraftedById", id);
     return globusLevels.globusLevels.filter((obj: any) => {
       return obj.id === id
     })
@@ -75,7 +76,9 @@ function Container(props: any) {
         setCraftedPieces(el.id);
       });
       let partsToBeCraftedArray = props.partsToBeCrafted;
-      partsToBeCraftedArray.push(getPartsToBeCraftedById(leftImagesFromSamePart.part));
+      console.log("leftImagesFromSamePart", leftImagesFromSamePart);
+      partsToBeCraftedArray.push(getPartsToBeCraftedById(leftImagesFromSamePart[0].part));
+      console.log("partsToBeCraftedArray",partsToBeCraftedArray);
       props.setPartsToBeCrafted(partsToBeCraftedArray);
       //enable button to craft the part and block draggable
     }
@@ -104,7 +107,6 @@ function Container(props: any) {
                 You are currently at level 2
               </Typography>
               <CraftingSpace
-                className="droppable"
                 tasks={props.tasks}
                 onDragOver={onDragOver}
                 onDrop={onDrop}

@@ -7,7 +7,7 @@ function ComponentChoiceList(props: any) {
           height: 450,
           fontSize: 14,
           }} cols={2} gap={4}>
-          {props.pieces.map((piece: { id: number, img: string, name: string, category: string, part: number, crafted: number}) => (
+    {props.tasks.wip.map((piece: { id: number, img: string, name: string, category: string, part: number, crafted: number}) => (
             <div key={piece.id} onDragStart={(e) => props.onDragStart(e, piece.id)}  draggable className="draggable drag-container">
             <ImageListItem key={piece.id}  >
               <Card variant="outlined">
