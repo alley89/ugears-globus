@@ -1,0 +1,59 @@
+{
+  "levelsComb": [
+    {
+      "levels": [1, 2, 3],
+      "src": "src/assets/levels/level-1.png",
+      "crafted": 0
+    },
+    {
+      "levels": [3, 4, 5],
+      "src": "src/assets/levels/level-6.png",
+      "crafted": 0
+    },
+    {
+      "levels": [7, 2],
+      "src": "src/assets/levels/level-8.png",
+      "crafted": 0
+    },
+    {
+      "levels": [10, 11, 12],
+      "src": "src/assets/levels/level-13.png",
+      "crafted": 0
+    },
+    {
+      "levels": [14, 15],
+      "src": "src/assets/levels/level-16.png",
+      "crafted": 0
+    },
+    {
+      "levels": [17, 18],
+      "src": "src/assets/levels/level-19.png",
+      "crafted": 0
+    },
+    {
+      "levels": [23, 24],
+      "src": "src/assets/levels/level-25.png",
+      "crafted": 0
+    },
+    {
+      "levels": [26, 16],
+      "src": "src/assets/levels/level-27.png",
+      "crafted": 0
+    },
+    {
+      "levels": [27, 19],
+      "src": "src/assets/levels/level-28.png",
+      "crafted": 0
+    },
+    {
+      "levels": [29, 25],
+      "src": "src/assets/levels/level-30.png",
+      "crafted": 0
+    },
+    {
+      "levels": [31, 32, 34],
+      "src": "src/assets/levels/level-33.png",
+      "crafted": 0
+    }
+  ]
+}
