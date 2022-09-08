@@ -76,8 +76,10 @@ function Container(props: any) {
         setCraftedPieces(el.id);
       });
       let partsToBeCraftedArray = props.partsToBeCrafted;
-      console.log("leftImagesFromSamePart", leftImagesFromSamePart);
-      partsToBeCraftedArray.push(getPartsToBeCraftedById(leftImagesFromSamePart[0].part));
+      console.log("partsToBeCraftedArray before", partsToBeCraftedArray);
+      let getPartsToBeCrafted = getPartsToBeCraftedById(leftImagesFromSamePart[0].part);
+      console.log("getPartsToBeCrafted", getPartsToBeCrafted);
+      partsToBeCraftedArray.push(getPartsToBeCrafted);
       console.log("partsToBeCraftedArray",partsToBeCraftedArray);
       props.setPartsToBeCrafted(partsToBeCraftedArray);
       //enable button to craft the part and block draggable
