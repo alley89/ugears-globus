@@ -39,8 +39,9 @@ function Container(props: any) {
     ev.preventDefault();
   };
 
-  const onDragStart = (ev:any, id:number) => {
+  const onDragStart = (ev:any, id:number, level:boolean=false) => {
     ev.dataTransfer.setData("id", id);
+    ev.dataTransfer.setData("level", level);
   };
 
   //idea: poate un buton de start si sa afisam un video al proiectului final
@@ -48,6 +49,9 @@ function Container(props: any) {
     //verifica daca mai sunt imagini de drop-uit din acea parte si din toate - ce se intampla daca mai sunt imagini sau daca nu mai sunt
     //afiseaza imaginea ansamblului in cazul in care au fost toate imaginile drop=uite
     let id = parseInt(ev.dataTransfer.getData("id"));
+    let level = ev.dataTransfer.getData("level");
+    console.log("id", id);
+    console.log("level", level);
     const imageDropped = getImageObjectById(id);
     const imagesFromSamePart = getImageObjectByPart(imageDropped[0].part);
     const leftImagesFromSamePart = getImageObjectByPart(imageDropped[0].part, "wip");
@@ -135,12 +139,9 @@ function Container(props: any) {
                 Finished levels
               </Typography>
               <ComponentDiscardedList
-                pieces={props.pieces}
+                levelPics={props.levelPics}
                 craftedTasks={props.craftedTasks}
-                onDragOver={(e: any) => onDragOver(e)}
-                onDrop={(e: any) => {
-                  onDrop(e, "wip");
-                }}/>
+                onDragStart={onDragStart}/>
             </Box>
           </Grid>
         </Grid>

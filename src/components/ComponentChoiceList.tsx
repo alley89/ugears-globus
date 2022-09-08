@@ -16,7 +16,7 @@ function ComponentChoiceList(props: any) {
                 <CardMedia
                   component="img"
                   height="140"
-                  image={props.pics.filter((pic: any) => {  if(pic.id === piece.id){  console.log(piece.id); return pic}})}
+              image={props.pics.filter((pic: any) => pic.id === piece.id)[0].src}
                   alt={piece.name}
                 />
                 <CardContent sx={{
