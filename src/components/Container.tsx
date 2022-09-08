@@ -95,6 +95,7 @@ function Container(props: any) {
                 Drag the next piece from the list
               </Typography>
               <ComponentChoiceList
+                pics={props.pics}
                 pieces={props.pieces}
                 tasks={props.tasks}
                 onDragStart={onDragStart}
