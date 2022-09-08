@@ -1,27 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./App.css";
 import Container from './components/Container';
+import globusPieces from './assets/pieces-data.json';
+import globusLevels from './assets/levels-data.json';
 
 export default function AppDragDropDemo() {
   const [pieces, setPieces] = useState<any>(
-    [
-      { name: "imagine 1", id: 1, category: "wip", part: 1, img: "../images/pexels-photo-13261419.jpeg", crafted: 0 },
-      { name: "imagine 2", id: 2, category: "wip", part: 1, img: "../images/pexels-photo-12309550.jpeg", crafted: 0 },
-      { name: "imagine 3", id: 3, category: "wip", part: 1, img: "", crafted: 0 },
-      { name: "imagine 4", id: 4, category: "wip", part: 2, img: "", crafted: 0 },
-      { name: "imagine 5", id: 5, category: "wip", part: 2, img: "", crafted: 0 },
-      { name: "imagine 6", id: 6, category: "wip", part: 3, img: "", crafted: 0 },
-      { name: "imagine 7", id: 7, category: "wip", part: 3, img: "", crafted: 0 },
-      { name: "imagine 8", id: 8, category: "wip", part: 3, img: "", crafted: 0 },
-      { name: "imagine 9", id: 9, category: "wip", part: 3, img: "", crafted: 0 },
-      { name: "imagine 10", id: 10, category: "wip", part: 3, img: "", crafted: 0 },
-      { name: "imagine 11", id: 1, category: "wip", part: 4, img: "", crafted: 0 },
-      { name: "imagine 12", id: 2, category: "wip", part: 4, img: "", crafted: 0 },
-      { name: "imagine 13", id: 3, category: "wip", part: 4, img: "", crafted: 0 },
-      { name: "imagine 14", id: 4, category: "wip", part: 5, img: "", crafted: 0 },
-      { name: "imagine 15", id: 5, category: "wip", part: 5, img: "", crafted: 0 },
-      { name: "imagine 16", id: 6, category: "wip", part: 5, img: "", crafted: 0 },
-    ]
+    globusPieces.globusPieces
+  );
+  const [partsToBeCrafted, setPartsToBeCrafted] = useState<any>([]
   );
   const [currentPart, setCurrentPart] = useState<number>(0);
   const [completedParts, setCompletedParts] = useState<any>([]);
@@ -29,9 +16,19 @@ export default function AppDragDropDemo() {
     wip: [],
     complete: []
   });
+  const [craftedTasks, setCraftedTasks] = useState<any>({
+    wip: [],
+    complete: []
+  });
 
   const getImageObjectById = (id:number) => {
     return pieces.filter((obj:any) => {
+      return obj.id === id
+    })
+  };
+
+  const getPartsToBeCraftedById = (id: number) => {
+    return globusLevels.globusLevels.filter((obj: any) => {
       return obj.id === id
     })
   };
@@ -89,12 +86,19 @@ export default function AppDragDropDemo() {
       imagesFromSamePart.forEach((el:any) => {
         setCraftedPieces(el.id);
       });
+      let partsToBeCraftedArray = partsToBeCrafted;
+      partsToBeCraftedArray.push(getPartsToBeCraftedById(leftImagesFromSamePart.part));
+      setPartsToBeCrafted(partsToBeCraftedArray);
       //enable button to craft the part and block draggable
     }
   };
 
   const getDraggableItems = () => {
     let allTasks:any = {
+      wip: [],
+      complete: [],
+    }; 
+    let allCraftedTasks: any = {
       wip: [],
       complete: [],
     };
@@ -112,7 +116,22 @@ export default function AppDragDropDemo() {
           </div>
         );
     });
+    console.log("partsToBeCrafted", partsToBeCrafted);
+    partsToBeCrafted.forEach((t: any) => {
+      if (t.crafted === 0)
+        allCraftedTasks[t.category].push(
+          <div
+            key={t.id}
+            onDragStart={(e) => onDragStart(e, t.id)}
+            draggable
+            className="draggable"
+            style={{ border: "1px solid red" }}>
+            {t.name}
+          </div>
+        );
+    });
     setTasks(allTasks);
+    setCraftedTasks(allCraftedTasks);
   };
 
   useEffect(() => {
@@ -121,7 +140,7 @@ export default function AppDragDropDemo() {
 
   useEffect(() => {
     getDraggableItems();
-  }, [pieces]);
+  }, [pieces, partsToBeCrafted]);
 
   return (
     <>
@@ -138,6 +157,15 @@ export default function AppDragDropDemo() {
           {tasks.wip}
         </div>
         <div
+          className="wip finished-parts"
+          onDragOver={(e) => onDragOver(e)}
+          onDrop={(e) => {
+            onDrop(e, "wip");
+          }}>
+          <span className="task-header">Finished Parts</span>
+          {craftedTasks.wip}
+        </div>
+        <div
           className="droppable"
           onDragOver={(e) => onDragOver(e)}
           onDrop={(e) => onDrop(e, "complete")}>
@@ -145,9 +173,9 @@ export default function AppDragDropDemo() {
           {tasks.complete}
         </div>
       </div>
-      <button className="next-part" onClick={() => {}}>
+      {/* <button className="next-part" onClick={() => {}}>
         Next part
-      </button>
+      </button> */}
     </>
   );
 }
