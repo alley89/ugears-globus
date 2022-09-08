@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent, CardMedia, ImageList, ImageListItem, Typography } from '@mui/material';
+import { capitalize, Card, CardContent, CardMedia, ImageList, ImageListItem, Typography } from '@mui/material';
 
 function ComponentChoiceList(props: any) {
 
@@ -7,8 +7,9 @@ function ComponentChoiceList(props: any) {
           height: 450,
           fontSize: 14,
           }} cols={2} gap={4}>
-          {props.pieces.map((piece: { id: number, img: string, name: string }) => (
-            <ImageListItem key={piece.id} >
+          {props.pieces.map((piece: { id: number, img: string, name: string, category: string, part: number, crafted: number}) => (
+            <div key={piece.id} onDragStart={(e) => props.onDragStart(e, piece.id)}  draggable className="draggable drag-container">
+            <ImageListItem key={piece.id}  >
               <Card variant="outlined">
                 <CardMedia
                   component="img"
@@ -20,13 +21,15 @@ function ComponentChoiceList(props: any) {
                   paddingBottom: 'unset'
                 }}>
                   <Typography sx={{
-                    color: '#46505A'
+                    color: '#46505A',
+                    textTransform: 'capitalize'
                   }} variant="caption">
                     {piece.name}
                   </Typography>
                 </CardContent>
               </Card>
             </ImageListItem>
+             </div>
           ))}
         </ImageList>
 }

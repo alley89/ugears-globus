@@ -4,8 +4,10 @@
   margin: 15px auto;
 }
 
-.container-drag {
+.app-container {
   text-align: center;
+  /*background-color: #eff6f0;*/
+  background-color: darkslategrey;
 }
 
 .wip {
@@ -19,11 +21,22 @@
 }
 
 .header {
-  display: inline-block;
+  display: flex;
+  justify-content: space-around;
   margin: 0;
   padding: 0;
-  background-color: #E0E0E0;
-  width:100%;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 200;
+  background-image: radial-gradient(#2b7a0b, #ff5b00);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  color: transparent;
+  -webkit-background-clip: text;
+}
+
+.header img {
+  height: 4em;
+  align-self: center;
 }
 
 .task-header {
@@ -32,23 +45,23 @@
   width:100%;
 }
 
-.droppable {
-  position: absolute;
-  width: 150px;
-  height: 90vh;
-  right: 0;
-  top: 10;
-  background-color: #9E9E9E;
-  border-left: 1px dotted;
-}
+/*.droppable {*/
+/*  position: absolute;*/
+/*  width: 150px;*/
+/*  height: 90vh;*/
+/*  right: 0;*/
+/*  top: 10;*/
+/*  background-color: #9E9E9E;*/
+/*  border-left: 1px dotted;*/
+/*}*/
 
-.draggable {
-  width: 100px;
-  height: 100px;
-  background-color: yellow;
-  margin: 5px auto;
-  line-height: 5em;
-}
+/*.draggable {*/
+/*  width: 100px;*/
+/*  height: 100px;*/
+/*  background-color: yellow;*/
+/*  margin: 5px auto;*/
+/*  line-height: 5em;*/
+/*}*/
 
 .next-part {
   position: absolute;
@@ -58,3 +71,8 @@
 .finished-parts {
   margin-left: 200px;
 }
+
+.drag-container{
+  margin-bottom: 5px;
+}
+
