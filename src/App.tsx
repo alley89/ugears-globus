@@ -3,6 +3,7 @@ import "./App.css";
 import Container from './components/Container';
 import globusPieces from './assets/pieces-data.json';
 import globusLevels from './assets/levels-data.json';
+import Header from './components/Header';
 
 export default function AppDragDropDemo() {
   const [pieces, setPieces] = useState<any>(
@@ -97,7 +98,7 @@ export default function AppDragDropDemo() {
     let allTasks:any = {
       wip: [],
       complete: [],
-    }; 
+    };
     let allCraftedTasks: any = {
       wip: [],
       complete: [],
@@ -106,28 +107,14 @@ export default function AppDragDropDemo() {
     pieces.forEach((t:any) => {
       if (t.crafted === 0)
         allTasks[t.category].push(
-          <div
-            key={t.id}
-            onDragStart={(e) => onDragStart(e, t.id)}
-            draggable
-            className="draggable"
-            style={{ border: "1px solid red" }}>
-            {t.name}
-          </div>
+          t
         );
     });
     console.log("partsToBeCrafted", partsToBeCrafted);
     partsToBeCrafted.forEach((t: any) => {
       if (t.crafted === 0)
         allCraftedTasks[t.category].push(
-          <div
-            key={t.id}
-            onDragStart={(e) => onDragStart(e, t.id)}
-            draggable
-            className="draggable"
-            style={{ border: "1px solid red" }}>
-            {t.name}
-          </div>
+          t
         );
     });
     setTasks(allTasks);
@@ -144,34 +131,45 @@ export default function AppDragDropDemo() {
 
   return (
     <>
-      <div className="container-drag">
-        <Container pieces={pieces}/>
-        <h2 className="header">Globus Project</h2>
-        <div
-          className="wip"
-          onDragOver={(e) => onDragOver(e)}
-          onDrop={(e) => {
-            onDrop(e, "wip");
-          }}>
-          <span className="task-header">WIP</span>
-          {tasks.wip}
-        </div>
-        <div
-          className="wip finished-parts"
-          onDragOver={(e) => onDragOver(e)}
-          onDrop={(e) => {
-            onDrop(e, "wip");
-          }}>
-          <span className="task-header">Finished Parts</span>
-          {craftedTasks.wip}
-        </div>
-        <div
-          className="droppable"
-          onDragOver={(e) => onDragOver(e)}
-          onDrop={(e) => onDrop(e, "complete")}>
-          <span className="task-header">COMPLETED</span>
-          {tasks.complete}
-        </div>
+      <div className="app-container">
+        <Header />
+        <Container
+          tasks={tasks}
+          pieces={pieces}
+          setPieces={setPieces}
+          currentPart={currentPart}
+          setCurrentPart={setCurrentPart}
+          setPartsToBeCrafted={setPartsToBeCrafted}
+          completedParts={completedParts}
+          pardsToBeCrafted={partsToBeCrafted}
+          setCompletedParts={setCompletedParts}
+          craftedTasks={craftedTasks}
+        />
+      {/*  <div*/}
+      {/*    className="wip"*/}
+      {/*    onDragOver={(e) => onDragOver(e)}*/}
+      {/*    onDrop={(e) => {*/}
+      {/*      onDrop(e, "wip");*/}
+      {/*    }}>*/}
+      {/*    <span className="task-header">WIP</span>*/}
+      {/*    {tasks.wip}*/}
+      {/*  </div>*/}
+      {/*  <div*/}
+      {/*    className="wip finished-parts"*/}
+      {/*    onDragOver={(e) => onDragOver(e)}*/}
+      {/*    onDrop={(e) => {*/}
+      {/*      onDrop(e, "wip");*/}
+      {/*    }}>*/}
+      {/*    <span className="task-header">Finished Parts</span>*/}
+      {/*    {craftedTasks.wip}*/}
+      {/*  </div>*/}
+      {/*  <div*/}
+      {/*    className="droppable"*/}
+      {/*    onDragOver={(e) => onDragOver(e)}*/}
+      {/*    onDrop={(e) => onDrop(e, "complete")}>*/}
+      {/*    <span className="task-header">COMPLETED</span>*/}
+      {/*    {tasks.complete}*/}
+      {/*  </div>*/}
       </div>
       {/* <button className="next-part" onClick={() => {}}>
         Next part
