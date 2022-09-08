@@ -7,7 +7,7 @@ function ComponentDiscardedList(props: any) {
     height: 450,
     fontSize: 14,
   }} cols={1} gap={4}>
-    {props.pieces.map((piece: { id: number, img: string, name: string }) => (
+    {props.craftedTasks.wip.map((piece: { id: number, img: string, name: string, category: string, part: number, crafted: number }) => (
       <ImageListItem key={piece.id} >
         <Card variant="outlined">
           <CardMedia
