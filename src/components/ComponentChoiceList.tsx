@@ -3,6 +3,8 @@ import { capitalize, Card, CardContent, CardMedia, ImageList, ImageListItem, Typ
 
 function ComponentChoiceList(props: any) {
 
+  const date = new Date();
+
   return <ImageList sx={{
           height: 450,
           fontSize: 14,
