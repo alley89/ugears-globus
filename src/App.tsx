@@ -44,7 +44,7 @@ import Pic36 from '../src/assets/pieces/image-36.png';
 import Pic37 from '../src/assets/pieces/image-37.png';
 import Pic38 from '../src/assets/pieces/image-38.png';
 import Pic39 from '../src/assets/pieces/image-39.png';
-import Pic40 from '../src/assets/pieces/image-40.png';
+// import Pic40 from '../src/assets/pieces/image-40.png';
 import Pic41 from '../src/assets/pieces/image-41.png';
 import Pic42 from '../src/assets/pieces/image-42.png';
 import Pic43 from '../src/assets/pieces/image-43.png';
@@ -118,7 +118,7 @@ export const pics = [
   {src: Pic37, id: 37},
   {src: Pic38, id: 38},
   {src: Pic39, id: 39},
-  {src: Pic40, id: 40},
+  // {src: Pic40, id: 40},
   {src: Pic41, id: 41},
   {src: Pic42, id: 42},
   {src: Pic43, id: 43},

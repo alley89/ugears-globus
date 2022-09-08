@@ -1,15 +1,12 @@
 import React from 'react';
 import { Card, CardContent, CardMedia, ImageList, ImageListItem, Typography } from '@mui/material';
 function ComponentDiscardedList(props: any) {
-
-  const date = new Date();
-
   return <ImageList sx={{
     height: 450,
     fontSize: 14,
   }} cols={1} gap={4}>
     {props.craftedTasks.wip.map((piece: { id: number, img: string, name: string, category: string, part: number, crafted: number }) => (
-      <ImageListItem key={(piece.id).toString() + date} >
+      <ImageListItem key={(Math.random()+1).toString(36).substring(7)} >
         <Card variant="outlined">
           <CardMedia
             component="img"
