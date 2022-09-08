@@ -285,6 +285,7 @@ export default function AppDragDropDemo() {
       <div className="app-container">
         <Header />
         <Container
+          pics={pics}
           tasks={tasks}
           pieces={pieces}
           setPieces={setPieces}
