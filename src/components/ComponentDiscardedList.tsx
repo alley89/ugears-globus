@@ -5,14 +5,15 @@ function ComponentDiscardedList(props: any) {
     height: 450,
     fontSize: 14,
   }} cols={1} gap={4}>
-    {props.craftedTasks.wip.map((piece: { id: number, img: string, name: string, category: string, part: number, crafted: number }) => (
-      <ImageListItem key={(Math.random()+1).toString(36).substring(7)} >
+    {props.craftedTasks.wip.map((piece: any) => (
+      <div key={(Math.random() + 1).toString(36).substring(7)} onDragStart={(e) => {props.onDragStart(e, piece[0].id, true)}} draggable className="draggable drag-container">
+      <ImageListItem>
         <Card variant="outlined">
           <CardMedia
             component="img"
             height="140"
-            image={piece.img}
-            alt={piece.name}
+            image={props.levelPics.filter((pic: any) => pic.id === piece[0].id)[0].src}
+            alt={piece[0].name}
           />
           <CardContent sx={{
             paddingBottom: 'unset'
@@ -20,11 +21,12 @@ function ComponentDiscardedList(props: any) {
             <Typography sx={{
               color: '#46505A'
             }} variant="caption">
-              {piece.name}
+              {piece[0].name}
             </Typography>
           </CardContent>
         </Card>
       </ImageListItem>
+      </div>
     ))}
   </ImageList>
 }

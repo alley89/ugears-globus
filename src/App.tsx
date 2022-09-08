@@ -44,7 +44,7 @@ import Pic36 from '../src/assets/pieces/image-36.png';
 import Pic37 from '../src/assets/pieces/image-37.png';
 import Pic38 from '../src/assets/pieces/image-38.png';
 import Pic39 from '../src/assets/pieces/image-39.png';
-// import Pic40 from '../src/assets/pieces/image-40.png';
+import Pic40 from '../src/assets/pieces/image-40.png';
 import Pic41 from '../src/assets/pieces/image-41.png';
 import Pic42 from '../src/assets/pieces/image-42.png';
 import Pic43 from '../src/assets/pieces/image-43.png';
@@ -77,6 +77,24 @@ import Pic69 from '../src/assets/pieces/image-69.png';
 import Pic70 from '../src/assets/pieces/image-70.png';
 import Pic71 from '../src/assets/pieces/image-71.png';
 import Pic72 from '../src/assets/pieces/image-72.png';
+
+import LevelPic1 from '../src/assets/levels/level-1.png';
+import LevelPic2 from '../src/assets/levels/level-2.png';
+import LevelPic3 from '../src/assets/levels/level-3.png';
+import LevelPic4 from '../src/assets/levels/level-4.png';
+import LevelPic5 from '../src/assets/levels/level-5.png';
+import LevelPic6 from '../src/assets/levels/level-6.png';
+import LevelPic7 from '../src/assets/levels/level-7.png';
+
+export const levelPics = [
+  { src: LevelPic1, id: 1 },
+  { src: LevelPic2, id: 2 },
+  { src: LevelPic3, id: 3 },
+  { src: LevelPic4, id: 4 },
+  { src: LevelPic5, id: 5 },
+  { src: LevelPic6, id: 6 },
+  { src: LevelPic7, id: 7 },
+];
 
 export const pics = [
   {src: Pic1, id: 1},
@@ -118,7 +136,7 @@ export const pics = [
   {src: Pic37, id: 37},
   {src: Pic38, id: 38},
   {src: Pic39, id: 39},
-  // {src: Pic40, id: 40},
+  {src: Pic40, id: 40},
   {src: Pic41, id: 41},
   {src: Pic42, id: 42},
   {src: Pic43, id: 43},
@@ -286,6 +304,7 @@ export default function AppDragDropDemo() {
         <Header />
         <Container
           pics={pics}
+          levelPics={levelPics}
           tasks={tasks}
           pieces={pieces}
           setPieces={setPieces}
