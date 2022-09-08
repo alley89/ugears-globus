@@ -20,7 +20,7 @@
       "name": "image 3",
       "id": 3,
       "category": "wip",
-      "part": 1,
+      "part": 2,
       "img": "src/assets/pieces/image-3.png",
       "crafted": 0
     },
@@ -28,7 +28,7 @@
       "name": "image 4",
       "id": 4,
       "category": "wip",
-      "part": 1,
+      "part": 2,
       "img": "src/assets/pieces/image-4.png",
       "crafted": 0
     },
@@ -204,7 +204,7 @@
       "name": "image 26",
       "id": 26,
       "category": "wip",
-      "part": 1,
+      "part": 17,
       "img": "src/assets/pieces/image-26.png",
       "crafted": 0
     },
@@ -268,7 +268,7 @@
       "name": "image 35",
       "id": 35,
       "category": "wip",
-      "part": 1,
+      "part": 17,
       "img": "src/assets/pieces/image-35.png",
       "crafted": 0
     },
@@ -276,7 +276,7 @@
       "name": "image 36",
       "id": 36,
       "category": "wip",
-      "part": 1,
+      "part": 17,
       "img": "src/assets/pieces/image-36.png",
       "crafted": 0
     },
@@ -308,7 +308,7 @@
       "name": "image 40",
       "id": 40,
       "category": "wip",
-      "part": 1,
+      "part": 17,
       "img": "src/assets/pieces/image-40.png",
       "crafted": 0
     },
@@ -324,7 +324,7 @@
       "name": "image 42",
       "id": 42,
       "category": "wip",
-      "part": 1,
+      "part": 17,
       "img": "src/assets/pieces/image-42.png",
       "crafted": 0
     },
@@ -348,7 +348,7 @@
       "name": "image 45",
       "id": 45,
       "category": "wip",
-      "part": 1,
+      "part": 17,
       "img": "src/assets/pieces/image-45.png",
       "crafted": 0
     },
@@ -396,7 +396,7 @@
       "name": "image 51",
       "id": 51,
       "category": "wip",
-      "part": 1,
+      "part": 17,
       "img": "src/assets/pieces/image-51.png",
       "crafted": 0
     },
@@ -404,7 +404,7 @@
       "name": "image 52",
       "id": 52,
       "category": "wip",
-      "part": 1,
+      "part": 17,
       "img": "src/assets/pieces/image-52.png",
       "crafted": 0
     },
@@ -420,7 +420,7 @@
       "name": "image 54",
       "id": 54,
       "category": "wip",
-      "part": 1,
+      "part": 17,
       "img": "src/assets/pieces/image-54.png",
       "crafted": 0
     },
@@ -428,7 +428,7 @@
       "name": "image 55",
       "id": 55,
       "category": "wip",
-      "part": 1,
+      "part": 17,
       "img": "src/assets/pieces/image-55.png",
       "crafted": 0
     },
@@ -436,7 +436,7 @@
       "name": "image 56",
       "id": 56,
       "category": "wip",
-      "part": 1,
+      "part": 17,
       "img": "src/assets/pieces/image-56.png",
       "crafted": 0
     },
@@ -444,7 +444,7 @@
       "name": "image 57",
       "id": 57,
       "category": "wip",
-      "part": 1,
+      "part": 17,
       "img": "src/assets/pieces/image-57.png",
       "crafted": 0
     },
@@ -452,7 +452,7 @@
       "name": "image 58",
       "id": 58,
       "category": "wip",
-      "part": 1,
+      "part": 17,
       "img": "src/assets/pieces/image-58.png",
       "crafted": 0
     },
@@ -460,7 +460,7 @@
       "name": "image 59",
       "id": 59,
       "category": "wip",
-      "part": 1,
+      "part": 17,
       "img": "src/assets/pieces/image-59.png",
       "crafted": 0
     },
@@ -468,7 +468,7 @@
       "name": "image 60",
       "id": 60,
       "category": "wip",
-      "part": 1,
+      "part": 17,
       "img": "src/assets/pieces/image-60.png",
       "crafted": 0
     },
@@ -476,7 +476,7 @@
       "name": "image 61",
       "id": 61,
       "category": "wip",
-      "part": 1,
+      "part": 17,
       "img": "src/assets/pieces/image-61.png",
       "crafted": 0
     },
@@ -484,7 +484,7 @@
       "name": "image 62,",
       "id": 62,
       "category": "wip",
-      "part": 1,
+      "part": 17,
       "img": "src/assets/pieces/image-62.png",
       "crafted": 0
     },
@@ -492,7 +492,7 @@
       "name": "image 63",
       "id": 63,
       "category": "wip",
-      "part": 1,
+      "part": 17,
       "img": "src/assets/pieces/image-63.png",
       "crafted": 0
     },
@@ -500,7 +500,7 @@
       "name": "image 64",
       "id": 64,
       "category": "wip",
-      "part": 1,
+      "part": 17,
       "img": "src/assets/pieces/image-64.png",
       "crafted": 0
     },
@@ -508,7 +508,7 @@
       "name": "image 65",
       "id": 65,
       "category": "wip",
-      "part": 1,
+      "part": 17,
       "img": "src/assets/pieces/image-65.png",
       "crafted": 0
     },
@@ -516,7 +516,7 @@
       "name": "image 66",
       "id": 66,
       "category": "wip",
-      "part": 1,
+      "part": 17,
       "img": "src/assets/pieces/image-66.png",
       "crafted": 0
     },
@@ -524,7 +524,7 @@
       "name": "image 67",
       "id": 67,
       "category": "wip",
-      "part": 1,
+      "part": 17,
       "img": "src/assets/pieces/image-67.png",
       "crafted": 0
     },
@@ -532,7 +532,7 @@
       "name": "image 68",
       "id": 68,
       "category": "wip",
-      "part": 1,
+      "part": 17,
       "img": "src/assets/pieces/image-68.png",
       "crafted": 0
     },
@@ -540,7 +540,7 @@
       "name": "image 69",
       "id": 69,
       "category": "wip",
-      "part": 1,
+      "part": 17,
       "img": "src/assets/pieces/image-69.png",
       "crafted": 0
     },
@@ -548,7 +548,7 @@
       "name": "image 70",
       "id": 70,
       "category": "wip",
-      "part": 1,
+      "part": 17,
       "img": "src/assets/pieces/image-70.png",
       "crafted": 0
     },
@@ -556,7 +556,7 @@
       "name": "image 71",
       "id": 71,
       "category": "wip",
-      "part": 1,
+      "part": 17,
       "img": "src/assets/pieces/image-71.png",
       "crafted": 0
     },
@@ -564,7 +564,7 @@
       "name": "image 72",
       "id": 72,
       "category": "wip",
-      "part": 1,
+      "part": 17,
       "img": "src/assets/pieces/image-72.png",
       "crafted": 0
     }

@@ -112,8 +112,9 @@ export default function AppDragDropDemo() {
     });
     console.log("partsToBeCrafted", partsToBeCrafted);
     partsToBeCrafted.forEach((t: any, index:any) => {
-      if (t[index].crafted === 0)
-        allCraftedTasks[t[index].category].push(
+      console.log("t", t);
+      if (t[0].crafted === 0)
+        allCraftedTasks[t[0].category].push(
           t
         );
     });
