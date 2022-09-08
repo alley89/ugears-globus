@@ -1,0 +1,307 @@
+{
+  "globusLevels": [
+    {
+      "name": "level 1",
+      "id": 1,
+      "category": "level",
+      "part": 1,
+      "img": "src/assets/levels/level-1.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 2",
+      "id": 2,
+      "category": "level",
+      "part": 2,
+      "img": "src/assets/levels/level-2.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 3",
+      "id": 3,
+      "category": "level",
+      "part": 2,
+      "img": "src/assets/levels/level-3.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 4",
+      "id": 4,
+      "category": "level",
+      "part": 4,
+      "img": "src/assets/levels/level-4.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 5",
+      "id": 5,
+      "category": "level",
+      "part": 5,
+      "img": "src/assets/levels/level-5.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 6",
+      "id": 6,
+      "category": "level",
+      "part": 6,
+      "img": "src/assets/levels/level-6.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 7",
+      "id": 7,
+      "category": "level",
+      "part": 7,
+      "img": "src/assets/levels/level-7.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 8",
+      "id": 8,
+      "category": "level",
+      "part": 8,
+      "img": "src/assets/levels/level-8.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 9",
+      "id": 9,
+      "category": "level",
+      "part": 9,
+      "img": "src/assets/levels/level-9.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 10",
+      "id": 10,
+      "category": "level",
+      "part": 10,
+      "img": "src/assets/levels/level-10.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 11",
+      "id": 11,
+      "category": "level",
+      "part": 11,
+      "img": "src/assets/levels/level-11.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 12",
+      "id": 12,
+      "category": "level",
+      "part": 12,
+      "img": "src/assets/levels/level-12.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 13",
+      "id": 13,
+      "category": "level",
+      "part": 13,
+      "img": "src/assets/levels/level-13.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 14",
+      "id": 14,
+      "category": "level",
+      "part": 14,
+      "img": "src/assets/levels/level-14.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 15",
+      "id": 15,
+      "category": "level",
+      "part": 15,
+      "img": "src/assets/levels/level-15.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 16",
+      "id": 16,
+      "category": "level",
+      "part": 16,
+      "img": "src/assets/levels/level-16.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 17",
+      "id": 17,
+      "category": "level",
+      "part": 17,
+      "img": "src/assets/levels/level-17.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 18",
+      "id": 18,
+      "category": "level",
+      "part": 18,
+      "img": "src/assets/levels/level-18.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 19",
+      "id": 19,
+      "category": "level",
+      "part": 19,
+      "img": "src/assets/levels/level-19.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 20",
+      "id": 20,
+      "category": "level",
+      "part": 20,
+      "img": "src/assets/levels/level-20.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 21",
+      "id": 21,
+      "category": "level",
+      "part": 21,
+      "img": "src/assets/levels/level-21.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 22",
+      "id": 22,
+      "category": "level",
+      "part":22,
+      "img": "src/assets/levels/level-22.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 23",
+      "id": 23,
+      "category": "level",
+      "part": 23,
+      "img": "src/assets/levels/level-23.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 24",
+      "id": 24,
+      "category": "level",
+      "part": 24,
+      "img": "src/assets/levels/level-24.png",
+      "crafted": 0
+    },{
+      "name": "level 25",
+      "id": 25,
+      "category": "level",
+      "part": 25,
+      "img": "src/assets/levels/level-25.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 26",
+      "id": 26,
+      "category": "level",
+      "part": 26,
+      "img": "src/assets/levels/level-26.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 27",
+      "id": 27,
+      "category": "level",
+      "part": 27,
+      "img": "src/assets/levels/level-27.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 28",
+      "id": 28,
+      "category": "level",
+      "part": 28,
+      "img": "src/assets/levels/level-28.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 29",
+      "id": 29,
+      "category": "level",
+      "part": 29,
+      "img": "src/assets/levels/level-29.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 30",
+      "id": 30,
+      "category": "level",
+      "part": 30,
+      "img": "src/assets/levels/level-30.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 31",
+      "id": 31,
+      "category": "level",
+      "part": 31,
+      "img": "src/assets/levels/level-31.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 32",
+      "id": 32,
+      "category": "level",
+      "part": 32,
+      "img": "src/assets/levels/level-32.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 33",
+      "id": 33,
+      "category": "level",
+      "part": 33,
+      "img": "src/assets/levels/level-33.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 34",
+      "id": 34,
+      "category": "level",
+      "part": 34,
+      "img": "src/assets/levels/level-34.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 35",
+      "id": 35,
+      "category": "level",
+      "part": 35,
+      "img": "src/assets/levels/level-35.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 36",
+      "id": 36,
+      "category": "level",
+      "part": 36,
+      "img": "src/assets/levels/level-36.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 37",
+      "id": 37,
+      "category": "level",
+      "part": 37,
+      "img": "src/assets/levels/level-37.png",
+      "crafted": 0
+    },
+    {
+      "name": "level 38",
+      "id": 38,
+      "category": "level",
+      "part": 38,
+      "img": "src/assets/levels/level-38.png",
+      "crafted": 0
+    }
+  ]
+}
