@@ -6,7 +6,7 @@ function ComponentDiscardedList(props: any) {
     fontSize: 14,
   }} cols={1} gap={4}>
     {props.craftedTasks.wip.map((piece: any) => (
-      <div key={(Math.random() + 1).toString(36).substring(7)} onDragStart={(e) => {props.onDragStart(e, piece[0].id, true)}} draggable className="draggable drag-container">
+      <div key={(Math.random() + 1).toString(36).substring(7)} onDragStart={(e) => {props.onDragStart(e, piece[0].part, true)}} draggable className="draggable drag-container">
       <ImageListItem>
         <Card variant="outlined">
           <CardMedia
