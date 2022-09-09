@@ -3,7 +3,7 @@ import { Card, CardContent, Typography } from '@mui/material';
 
 function CraftingSpace(props: any) {
 
-  return <Card sx={{ height: 220, backgroundColor: 'rgba(0, 0, 0, 0.1)' }} variant="outlined" className={"droppable"} onDrop={(e) => props.onDrop(e, "complete")} onDragOver={(e) => props.onDragOver(e)}>
+  return <Card sx={{ height: 220, backgroundColor: '#fce8c2' }} variant="outlined" className={"droppable"} onDrop={(e) => props.onDrop(e, "complete")} onDragOver={(e) => props.onDragOver(e)}>
 
     <CardContent sx={{
       paddingBottom: 'unset',

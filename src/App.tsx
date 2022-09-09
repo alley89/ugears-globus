@@ -85,6 +85,7 @@ import LevelPic4 from '../src/assets/levels/level-4.png';
 import LevelPic5 from '../src/assets/levels/level-5.png';
 import LevelPic6 from '../src/assets/levels/level-6.png';
 import LevelPic7 from '../src/assets/levels/level-7.png';
+import Footer from './components/Footer';
 
 export const levelPics = [
   { src: LevelPic1, id: 1 },
@@ -313,6 +314,7 @@ export default function AppDragDropDemo() {
           craftedTasks={craftedTasks}
           setCraftedTasks={setCraftedTasks}
         />
+        <Footer />
       {/*  <div*/}
       {/*    className="wip"*/}
       {/*    onDragOver={(e) => onDragOver(e)}*/}

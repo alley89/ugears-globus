@@ -5,10 +5,12 @@ function CraftingState(props:any) {
 
   return <Card sx={{ height: 260 }} variant="outlined">
     <CardContent sx={{
-      paddingBottom: 'unset'
+      paddingBottom: 'unset',
+      backgroundColor: '#eff6f0'
     }}>
       <CardMedia
-      className='crafting-state'
+        sx={{margin: 'auto', backgroundColor: '#fce8c2'}}
+        className='crafting-state'
         component="img"
         height="200"
         width="200"
@@ -17,7 +19,7 @@ function CraftingState(props:any) {
       <Typography sx={{
         color: '#46505a'
       }} variant="caption">
-        Craft state
+        You crafted this so far
       </Typography>
     </CardContent>
   </Card>
