@@ -276,16 +276,13 @@ export default function AppDragDropDemo() {
           t
         );
     });
-    console.log("partsToBeCrafted", partsToBeCrafted);
     partsToBeCrafted.forEach((t: any, index:any) => {
-      console.log("t", t);
       if (t[0].crafted === 0)
         allCraftedTasks[t[0].category].push(
           t
         );
     });
     setTasks(allTasks);
-    console.log("allCraftedTasks", allCraftedTasks);
     setCraftedTasks(allCraftedTasks);
   };
 
@@ -294,7 +291,6 @@ export default function AppDragDropDemo() {
   }, []);
 
   useEffect(() => {
-    console.log("useeffect");
     getDraggableItems();
   }, [pieces, partsToBeCrafted]);
 
@@ -315,6 +311,7 @@ export default function AppDragDropDemo() {
           partsToBeCrafted={partsToBeCrafted}
           setCompletedParts={setCompletedParts}
           craftedTasks={craftedTasks}
+          setCraftedTasks={setCraftedTasks}
         />
       {/*  <div*/}
       {/*    className="wip"*/}
