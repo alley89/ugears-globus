@@ -6,7 +6,23 @@ import CraftingState from './CraftingState';
 import ComponentDiscardedList from './ComponentDiscardedList';
 import globusLevels from '../assets/levels-data.json';
 
+import LevelComb1 from '../assets/levels/level-1.png';
+import LevelComb6 from '../assets/levels/level-6.png';
+import LevelComb8 from '../assets/levels/level-8.png';
+import LevelComb13 from '../assets/levels/level-13.png';
+import LevelComb16 from '../assets/levels/level-16.png';
+
+export const levelComb = [
+  { src: LevelComb1, comb: [1, 2, 3] },
+  { src: LevelComb6, comb: [3, 4, 5] },
+  { src: LevelComb8, comb: [7, 2] },
+  { src: LevelComb13, comb: [10, 11, 12] },
+  { src: LevelComb16, comb: [14, 15] },
+];
+
 function Container(props: any) {
+  const [availableLevels, setAvailableLevels] = useState<any>([]);
+  const [finalLevelImage, setFinalLevelImage] = useState<any>();
 
   const getImageObjectById = (id:number) => {
     return props.pieces.filter((obj:any) => {
@@ -50,44 +66,71 @@ function Container(props: any) {
     //afiseaza imaginea ansamblului in cazul in care au fost toate imaginile drop=uite
     let id = parseInt(ev.dataTransfer.getData("id"));
     let level = ev.dataTransfer.getData("level");
-    console.log("id", id);
-    console.log("level", level);
-    const imageDropped = getImageObjectById(id);
-    const imagesFromSamePart = getImageObjectByPart(imageDropped[0].part);
-    const leftImagesFromSamePart = getImageObjectByPart(imageDropped[0].part, "wip");
-    if (props.currentPart === 0) {
-      props.setCurrentPart(imageDropped[0].part);
-    } else if (props.currentPart !== imageDropped[0].part) {
-      alert("not from the same part");
-      return ;
-    }
+    console.log("level----------", level);
 
-    let completedTasks = props.pieces.map((task:any) => {
-      if (task.id === id) {
-        task.category = cat;
-      }
-      return task;
-    });
-    props.setPieces(completedTasks);
+    if (level === "true") {
+      let part = parseInt(ev.dataTransfer.getData("id"));
+      console.log("part", part);
+      let currentlyAvailableparts = availableLevels;
+      currentlyAvailableparts.push(part);
+      console.log("currentlyAvailableparts", currentlyAvailableparts)
+      setAvailableLevels(currentlyAvailableparts);
+      console.log("availableLevels", availableLevels);
 
-    //s-au terminat imaginile din aceeasi parte?
-    if (leftImagesFromSamePart.length === 1) { // last image was dropped
-      let newCompletedParts = props.completedParts;
-      newCompletedParts.push(props.currentPart);
-      props.setCompletedParts(newCompletedParts);
-      props.setCurrentPart(0);
-      imagesFromSamePart.forEach((el:any) => {
-        setCraftedPieces(el.id);
+      levelComb.forEach((level) => {
+        let whichLevelIsComplete = level.comb.every(value => {
+          console.log("every value", value, "availLvl", availableLevels);
+          console.log("availableLevels.includes(value)", availableLevels.includes(value));
+          return availableLevels.includes(value);
+        });
+        console.log("whichLevelIsComplete", whichLevelIsComplete);
+        console.log("level", level);
+        if (whichLevelIsComplete) {
+          console.log("level complete image", level.src);
+          setFinalLevelImage(level.src);
+        }
       });
-      let partsToBeCraftedArray = props.partsToBeCrafted;
-      console.log("partsToBeCraftedArray before", partsToBeCraftedArray);
-      let getPartsToBeCrafted = getPartsToBeCraftedById(leftImagesFromSamePart[0].part);
-      console.log("getPartsToBeCrafted", getPartsToBeCrafted);
-      partsToBeCraftedArray.push(getPartsToBeCrafted);
-      console.log("partsToBeCraftedArray",partsToBeCraftedArray);
-      props.setPartsToBeCrafted(partsToBeCraftedArray);
-      //enable button to craft the part and block draggable
+
+      console.log("finalLevelImage", finalLevelImage);
+    } else {
+      const imageDropped = getImageObjectById(id);
+      const imagesFromSamePart = getImageObjectByPart(imageDropped[0].part);
+      const leftImagesFromSamePart = getImageObjectByPart(imageDropped[0].part, "wip");
+      if (props.currentPart === 0) {
+        props.setCurrentPart(imageDropped[0].part);
+      } else if (props.currentPart !== imageDropped[0].part) {
+        alert("not from the same part");
+        return;
+      }
+
+      let completedTasks = props.pieces.map((task: any) => {
+        if (task.id === id) {
+          task.category = cat;
+        }
+        return task;
+      });
+      props.setPieces(completedTasks);
+
+      //s-au terminat imaginile din aceeasi parte?
+      if (leftImagesFromSamePart.length === 1) { // last image was dropped
+        let newCompletedParts = props.completedParts;
+        newCompletedParts.push(props.currentPart);
+        props.setCompletedParts(newCompletedParts);
+        props.setCurrentPart(0);
+        imagesFromSamePart.forEach((el: any) => {
+          setCraftedPieces(el.id);
+        });
+        let partsToBeCraftedArray = props.partsToBeCrafted;
+        console.log("partsToBeCraftedArray before", partsToBeCraftedArray);
+        let getPartsToBeCrafted = getPartsToBeCraftedById(leftImagesFromSamePart[0].part);
+        console.log("getPartsToBeCrafted", getPartsToBeCrafted);
+        partsToBeCraftedArray.push(getPartsToBeCrafted);
+        console.log("partsToBeCraftedArray", partsToBeCraftedArray);
+        props.setPartsToBeCrafted(partsToBeCraftedArray);
+        //enable button to craft the part and block draggable
+      }
     }
+    
   };
 
   return <Grid container spacing={1} wrap={'wrap'}>
@@ -111,7 +154,7 @@ function Container(props: any) {
               <Typography sx={{
                 color: '#46505A'
               }} variant="overline">
-                You are currently at level 2
+                Crafting space
               </Typography>
               <CraftingSpace
                 tasks={props.tasks}
@@ -126,9 +169,9 @@ function Container(props: any) {
               <Typography sx={{
                 color: '#46505A'
               }} variant="overline">
-                Next state
+                Currently crafted
               </Typography>
-              <CraftingState />
+              <CraftingState finalImage={finalLevelImage} />
             </Box>
           </Grid>
           <Grid item xs={2}>
@@ -136,7 +179,7 @@ function Container(props: any) {
               <Typography sx={{
                 color: '#46505A'
               }} variant="overline">
-                Finished levels
+                Finished parts
               </Typography>
               <ComponentDiscardedList
                 levelPics={props.levelPics}

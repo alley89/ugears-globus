@@ -1,16 +1,22 @@
 import React from 'react';
-import { Card, CardContent, Typography } from '@mui/material';
+import { Card, CardContent, CardMedia, Typography } from '@mui/material';
 
-function CraftingState() {
+function CraftingState(props:any) {
 
-  return <Card variant="outlined">
+  return <Card sx={{ height: 260 }} variant="outlined">
     <CardContent sx={{
       paddingBottom: 'unset'
     }}>
+      <CardMedia
+        component="img"
+        height="200"
+        width="200"
+        image={props.finalImage}
+      />
       <Typography sx={{
         color: '#46505a'
       }} variant="caption">
-        stadiul de craft
+        Craft state
       </Typography>
     </CardContent>
   </Card>
