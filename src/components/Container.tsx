@@ -154,9 +154,6 @@ function Container(props: any) {
                 onDragOver={onDragOver}
                 onDrop={onDrop}
               />
-              <Button variant="contained" size="small" sx={{ marginTop: '1em'}} color="success" onClick={() => {console.log("nimic")}}>
-                Generate
-              </Button>
             </Box>
             <Box sx={{ m: 3, p: 2, border: '1px solid rgba(0, 0, 0, 0.12)', borderRadius: '4px', backgroundColor: 'white'}}>
               <Typography sx={{
