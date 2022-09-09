@@ -8,6 +8,7 @@ function CraftingState(props:any) {
       paddingBottom: 'unset'
     }}>
       <CardMedia
+      className='crafting-state'
         component="img"
         height="200"
         width="200"
