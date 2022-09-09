@@ -3,11 +3,9 @@ import React from "react";
 const footerStyle:any = {
   marginTop: '1rem',
   padding: '1rem',
-  backgroundColor: '#2b7a0b',
-  position: 'fixed',
+  backgroundColor: '#C3A51E',
   bottom: 0,
   left: 0,
-  width: '100%',
   textAlign: 'start',
   color: 'white'
 };
