@@ -31,7 +31,6 @@ function Container(props: any) {
   };
 
   const getPartsToBeCraftedById = (id: number) => {
-    console.log("getPartsToBeCraftedById", id);
     return globusLevels.globusLevels.filter((obj: any) => {
       return obj.id === id
     })
@@ -66,32 +65,29 @@ function Container(props: any) {
     //afiseaza imaginea ansamblului in cazul in care au fost toate imaginile drop=uite
     let id = parseInt(ev.dataTransfer.getData("id"));
     let level = ev.dataTransfer.getData("level");
-    console.log("level----------", level);
 
     if (level === "true") {
       let part = parseInt(ev.dataTransfer.getData("id"));
-      console.log("part", part);
       let currentlyAvailableparts = availableLevels;
       currentlyAvailableparts.push(part);
-      console.log("currentlyAvailableparts", currentlyAvailableparts)
       setAvailableLevels(currentlyAvailableparts);
-      console.log("availableLevels", availableLevels);
 
       levelComb.forEach((level) => {
         let whichLevelIsComplete = level.comb.every(value => {
-          console.log("every value", value, "availLvl", availableLevels);
-          console.log("availableLevels.includes(value)", availableLevels.includes(value));
           return availableLevels.includes(value);
         });
-        console.log("whichLevelIsComplete", whichLevelIsComplete);
-        console.log("level", level);
         if (whichLevelIsComplete) {
-          console.log("level complete image", level.src);
           setFinalLevelImage(level.src);
         }
       });
 
-      console.log("finalLevelImage", finalLevelImage);
+      //remove levels
+      let remainedCraftedTasks = props.craftedTasks.wip.filter((craftedTask: any, index:number) => {return craftedTask[0].id !== part});
+
+      props.setCraftedTasks({
+        wip: remainedCraftedTasks,
+        complete: []
+      });
     } else {
       const imageDropped = getImageObjectById(id);
       const imagesFromSamePart = getImageObjectByPart(imageDropped[0].part);
@@ -121,11 +117,8 @@ function Container(props: any) {
           setCraftedPieces(el.id);
         });
         let partsToBeCraftedArray = props.partsToBeCrafted;
-        console.log("partsToBeCraftedArray before", partsToBeCraftedArray);
         let getPartsToBeCrafted = getPartsToBeCraftedById(leftImagesFromSamePart[0].part);
-        console.log("getPartsToBeCrafted", getPartsToBeCrafted);
         partsToBeCraftedArray.push(getPartsToBeCrafted);
-        console.log("partsToBeCraftedArray", partsToBeCraftedArray);
         props.setPartsToBeCrafted(partsToBeCraftedArray);
         //enable button to craft the part and block draggable
       }
